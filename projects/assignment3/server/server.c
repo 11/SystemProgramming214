@@ -1,12 +1,17 @@
+/*
+ * Author: Douglas Rudolph & Nandan Thakkar
+ * File: server.c
+ * Course: Systems Programming - CS:214
+ * Professor: 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
-
 #include <netdb.h>
 #include <netinet/in.h>
-
 #include <string.h>
 
-int main( int argc, char *argv[] ) {
+int main(int argc, char *argv[] ) {
    int sockfd, newsockfd, portno, clilen;
    char buffer[256];
    struct sockaddr_in serv_addr, cli_addr;
@@ -14,7 +19,8 @@ int main( int argc, char *argv[] ) {
    
    /* First call to socket() function */
    sockfd = socket(AF_INET, SOCK_STREAM, 0);
-   
+  
+   //if the socket file descriptor couldn't connect
    if (sockfd < 0) {
       perror("ERROR opening socket");
       exit(1);
